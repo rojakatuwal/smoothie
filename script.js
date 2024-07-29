@@ -10,23 +10,26 @@ class Smoothie {
         return `${this.name} ordered ${this.quantity} ${this.size} ${this.flavor} smoothie(s).`;
     }
 }
-document.getElementById('orderForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevents the default form submission
 
-    // Gets form values
+document.getElementById('orderForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get form values
     const name = document.getElementById('name').value;
     const flavor = document.getElementById('flavor').value;
     const size = document.querySelector('input[name="size"]:checked').value;
     const quantity = document.getElementById('quantity').value;
 
-    // Creates a new Smoothie object
+    // Create a new Smoothie object
     const smoothie = new Smoothie(name, flavor, size, quantity);
 
-    // Stores the values in session storage
+    // Store the values in session storage
     sessionStorage.setItem('smoothieDescription', smoothie.getDescription());
 
-    // Redirects to the thank you page
-    window.location.href = 'index1.html';
+    // Display the thank you section and hide the order form
+    document.getElementById('orderSection').classList.add('hidden');
+    document.getElementById('thankYouSection').classList.remove('hidden');
+    document.getElementById('orderSummary').innerText = smoothie.getDescription();
 });
 
 // Script that controls the increment and decrement of the order quantity as we hit the + and - button
@@ -41,3 +44,17 @@ document.getElementById('decrement').addEventListener('click', function() {
         quantityInput.value = parseInt(quantityInput.value) - 1;
     }
 });
+
+// Script to handle going back to the order form
+document.getElementById('backToOrder').addEventListener('click', function() {
+    document.getElementById('orderSection').classList.remove('hidden');
+    document.getElementById('thankYouSection').classList.add('hidden');
+});
+
+// Check if there is an order description in session storage and display the thank you section if present
+const storedDescription = sessionStorage.getItem('smoothieDescription');
+if (storedDescription) {
+    document.getElementById('orderSection').classList.add('hidden');
+    document.getElementById('thankYouSection').classList.remove('hidden');
+    document.getElementById('orderSummary').innerText = storedDescription;
+}
