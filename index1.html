@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style> body{
+        background-color: #F5E0EA;
+    }  
+    .content{
+        height: fit-content;
+        width: 400px;
+    }  
+    .logo p{
+        color: black;
+    }  </style>
+    <div class="logo"> <p><u> Smoothie Planet </u></p> </div>
+    <div class="content">
+       
+    <h1>Thank You for Your Order With <i>Smoothie Planet!</i></h1>
+    <p> You Can Collect Your Order Anytime at Any Location of <u> <i> <b>Smoothie Planet.</b> </i>  </u></p>
+    <p> Please Present The Order Summary as Listed Below While Collecting Your Order.</p>
+    <p id="orderSummary"></p>
+</div>
+
+    <script>
+        // Retrieve stored values
+        const smoothieDescription = sessionStorage.getItem('smoothieDescription');
+
+        // Display the order summary
+        document.getElementById('orderSummary').innerText = smoothieDescription;
+    </script>
+</body>
+</html>

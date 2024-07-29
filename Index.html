@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoothie Order Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="logo"> <p><u> Smoothie Planet </u> </p> </div>
+    <div class="bg-image"></div>
+    <div class="content">
+        <h1>Order Your Smoothie</h1>
+        <form id="orderForm">
+            <label for="name"><b>Name:</b></label>
+            
+            <input type="text" id="name" placeholder="Please enter your name" name="name" required><br><br>
+    
+            <label for="flavor"> <b>Flavor:</b></label>
+            <select id="flavor" name="flavor">
+                <option value="Strawberry">Strawberry</option>
+                <option value="Banana">Banana</option>
+                <option value="Mango">Mango</option>
+                <option value="Mixed Berry">Mixed Berry</option>
+            </select><br><br>
+
+            <div class="size">
+            <label for="size"> <b> Size: </b></label><br>
+            <input type="radio" id="small" name="size" value="Small" required>
+            <label for="small">Small</label><br>
+            <input type="radio" id="medium" name="size" value="Medium">
+            <label for="medium">Medium</label><br>
+            <input type="radio" id="large" name="size" value="Large">
+            <label for="large">Large</label><br>
+            <input type="radio" id="extraLarge" name="size" value="Extra Large">
+            <label for="extraLarge">Extra Large</label><br><br>
+        </div>
+            <div class="quantity-container">
+                <button type="button" id="decrement">-</button>
+                <input type="text" id="quantity" value="1" readonly>
+                <button type="button" id="increment">+</button>
+            </div>
+            <button type="submit">Order Now</button>
+        </form>
+
+        <script src="/script.js"></script>
+    
+</body>
+</html>
+ 

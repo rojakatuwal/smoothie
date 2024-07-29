@@ -1,0 +1,90 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+        position: absolute;
+        top: -5%;
+        left: 0;
+        font-family: 'Pacifico', cursive;
+        font-size: 36px;
+        color:  rgb(245, 224, 234);
+        padding: 10px; 
+    
+}
+   
+.bg-image {
+    background-image: url('./images/Image1.jpg'); 
+    height: 100%; 
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(1px); 
+    z-index: -1;
+}
+
+.content {
+    background: rgba(164, 112, 136, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 1;
+}
+
+input, button, select {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.size
+{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.quantity-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.quantity-container button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+}
+
+#quantity {
+    width: 60px;
+    text-align: center;
+    font-size: 1em;
+}
+
+button {
+    background-color: #A47088;
+    color: white;
+    cursor: pointer;
+}
+
+#output {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
